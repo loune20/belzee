@@ -23,7 +23,7 @@ height = pygame.display.Info().current_h
 width = int((height/0.625))
 #SCREEN SETUP
 time_max_before_losing = 3600*1000#3600*1000 miliseconds = 3600 seconds = 60 minutes = 1 hour
-time_before_ask_indice2 = 900*1000#900*1000 miliseconds = 900 seconds = 15 minutes
+time_before_ask_indice2 = 300*1000#300*1000 miliseconds = 300 seconds = 5 minutes
 last_no_repeat = 0
 indicate_click = 0
 height = int((width*0.625))
@@ -49,7 +49,7 @@ time_passed_on_enigma = 0
 #mouse_verbose = 0
 frameRate = 30
 grave_click_combo = 0
-max_nbr_click_to_repeat = 3
+max_nbr_click_to_repeat = 1
 arrow_key = [pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT]
 bg_sprites = {}
 bg_sprites_names = [
