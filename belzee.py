@@ -32,6 +32,7 @@ pygame.display.set_caption("Belzee")
 
  #LOADING ASSETS
 tender = pygame.mixer.Sound("assets/tender.wav")
+laugh = pygame.mixer.Sound("assets/laugh_modif.wav")
 intro1_image = {"x" : 0, 
                 "y" : 0, 
                 "image" : pygame.image.load("assets/intro1.jpg")}
@@ -106,7 +107,7 @@ indice3 = ("Tiens, une corde de pendu ! Je les connais bien, j'étudie la thanat
         "C'est un domaine qui regroupe plusieurs sciences universitaires pour étudier la mort et ses aspetcs psychologiques, biologiques et culturels."
         " Malheureusement, c'est une science trop peu connue, comme la cryptozoologie, qui étudie les animaux fantastiques. "
         "C'est fascinant ! Ça permet de mieux connaitre des créatures comme les centaures, les phoenix, les sirènes, les dragons, les hydres, les chimères..."
-        "Et ainsi de mieux les acceuillir en Enfer !"
+        "Et ainsi de mieux les accueillir en Enfer !"
         "\n"
         "\n")
 
@@ -271,6 +272,8 @@ def intro():
     print(intro_talk_pt2)
     print("COMMENT JOUER : Explorez l'image et interrogez Belzee pour qu'elle vous en dise plus..."+"\n")
     input("Entrée pour continuer..."+"\n"+"\n")
+    """screen = pygame.display.set_mode((width,height))
+    pygame.display.set_caption("Belzee")"""
     #END INTRO CODE
     intro_playing = False
     eningma_playing = True
@@ -384,6 +387,7 @@ def mouseChapelCollision():
         last_no_repeat = pygame.time.get_ticks()
     #print("chapel")
     grave_click_combo = 0
+    laugh.play(0)
 
 def mouseHangedropeCollision():
     global last_no_repeat, grave_click_combo, indicate_click
@@ -500,7 +504,7 @@ def qpressed(): #QUITTNG FUNCTION
     if want_to_quit == "c":
         print("Cancelling system exit...")
         print("Done !")
-    else:"""        
+    else:"""
     sys.exit()
 
 def rpressed():
