@@ -19,12 +19,14 @@ pygame.mixer.init()
 clock = pygame.time.Clock()
 pygame.mouse.set_visible(False)
 GAME_FONT = pygame.freetype.Font("assets/cutepunk_regular.ttf", 50)
-
+"""width = pygame.display.Info().current_w
+height = int((width*0.625))"""
+height = pygame.display.Info().current_h
+width = int((height/0.625))
 #SCREEN SETUP
 time_max_before_losing = 3600*1000#3600*1000 miliseconds = 3600 seconds = 60 minutes = 1 hour
 time_before_ask_indice2 = 900*1000#900*1000 miliseconds = 900 seconds = 15 minutes
 last_no_repeat = 0
-width = 1800
 height = int((width*0.625))
 screen = pygame.display.set_mode((width,height))
 pygame.display.set_caption("Belzee")
@@ -180,7 +182,9 @@ def createPopupThing():
     canvas.create_window((5,5), window=frame, anchor="nw")
     frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
 
-    rmbr_button = tk.Button(frame, text="Remember for later...", command =(root.destroy))
+    root.wm_title("Belzee a dit")
+
+    rmbr_button = tk.Button(frame, text="Fermer et se souvenir...", command =(root.destroy))
     rmbr_button.grid(row=11, column=0)
 ##########
 
