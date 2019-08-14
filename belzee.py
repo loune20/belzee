@@ -185,9 +185,6 @@ def createPopupThing():
 
     rmbr_button = tk.Button(frame, text="Fermer et se souvenir...", command =(root.destroy))
     rmbr_button.grid(row=11, column=0)
-##########
-
-
 
 #SPRITES SETUP      
 all_sprites_list = pygame.sprite.OrderedUpdates()
@@ -250,7 +247,7 @@ def getAnswer():
 
 def askIndice2():
     print(ask_indice2)
-    global answer_ask_indice2
+    global answer_ask_indice2, time_max_before_losing
     ask_indice2_looping = True
     while ask_indice2_looping:
         answer_ask_indice2 = input("Tu veux de l'aide, oui ou non ?"+"\n")
