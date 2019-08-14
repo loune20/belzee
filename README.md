@@ -26,7 +26,7 @@ A friendly reminder : looking up the source code to find the answer IS cheating 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-MIT License
+ License
 
 Copyright (c) [2019] [Louise Mercier & Chloé Sutre]
 
