@@ -236,8 +236,8 @@ belzee_plhd.image = pygame.image.load("assets/belzee_placeholder.png").convert_a
 belzee_plhd.image = pygame.transform.scale(belzee_plhd.image,(167,227))
 belzee_plhd.mask = pygame.mask.from_surface(belzee_plhd.image)
 belzee_plhd.rect = belzee_plhd.image.get_rect()
-belzee_plhd.rect.x = 700
-belzee_plhd.rect.y = 55
+belzee_plhd.rect.x = (width/2.57)
+belzee_plhd.rect.y = (height/20.45)
 all_sprites_list.add(belzee_plhd)
 belzee_holder.add(belzee_plhd)
 
