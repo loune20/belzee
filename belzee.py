@@ -19,8 +19,6 @@ pygame.mixer.init()
 clock = pygame.time.Clock()
 pygame.mouse.set_visible(False)
 GAME_FONT = pygame.freetype.Font("assets/cutepunk_regular.ttf", 50)
-"""width = pygame.display.Info().current_w
-height = int((width*0.625))"""
 height = pygame.display.Info().current_h
 width = int((height/0.625))
 #SCREEN SETUP
@@ -233,7 +231,7 @@ mouse_holder.add(mouse_sprite)
 #CREATE BELZEE'S PLACEHOLDER SPRITE
 belzee_plhd = pygame.sprite.Sprite()
 belzee_plhd.image = pygame.image.load("assets/belzee_placeholder.png").convert_alpha()
-belzee_plhd.image = pygame.transform.scale(belzee_plhd.image,(167,227))
+belzee_plhd.image = pygame.transform.scale(belzee_plhd.image,(int((width/10.7)),int((height/4.95))))
 belzee_plhd.mask = pygame.mask.from_surface(belzee_plhd.image)
 belzee_plhd.rect = belzee_plhd.image.get_rect()
 belzee_plhd.rect.x = (width/2.57)
