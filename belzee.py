@@ -27,6 +27,7 @@ width = int((height/0.625))
 time_max_before_losing = 3600*1000#3600*1000 miliseconds = 3600 seconds = 60 minutes = 1 hour
 time_before_ask_indice2 = 900*1000#900*1000 miliseconds = 900 seconds = 15 minutes
 last_no_repeat = 0
+indicate_click = 0
 height = int((width*0.625))
 screen = pygame.display.set_mode((width,height))
 pygame.display.set_caption("Belzee")
@@ -368,60 +369,66 @@ def mouseGrave14Collision():
     grave_click_combo += 1
 
 def mousePortalCollision():
-    global last_no_repeat, grave_click_combo
+    global last_no_repeat, grave_click_combo, indicate_click
     bg_sprites["portal"].nbr_of_click += 1
     if bg_sprites["portal"].nbr_of_click<= max_nbr_click_to_repeat:
         popup_content.append(indice1)
+        indicate_click = pygame.time.get_ticks()
     else:
         last_no_repeat = pygame.time.get_ticks()
     #print("portal")
     grave_click_combo = 0
 
 def mouseChapelCollision():
-    global last_no_repeat, grave_click_combo
+    global last_no_repeat, grave_click_combo, indicate_click
     bg_sprites["chapel"].nbr_of_click += 1
     if bg_sprites["chapel"].nbr_of_click<= max_nbr_click_to_repeat:
         popup_content.append(discut_chapel)
+        indicate_click = pygame.time.get_ticks()
     else:
         last_no_repeat = pygame.time.get_ticks()
     #print("chapel")
     grave_click_combo = 0
 
 def mouseHangedropeCollision():
-    global last_no_repeat, grave_click_combo
+    global last_no_repeat, grave_click_combo, indicate_click
     bg_sprites["hangedrope"].nbr_of_click += 1
     if bg_sprites["hangedrope"].nbr_of_click<= max_nbr_click_to_repeat:
         popup_content.append(indice3)
+        indicate_click = pygame.time.get_ticks()
     else:
         last_no_repeat = pygame.time.get_ticks()
     #print("hangedrope")
     grave_click_combo = 0
 
 def mouseShovelwateringcanCollision():
-    global last_no_repeat, grave_click_combo
+    global last_no_repeat, grave_click_combo, indicate_click
     bg_sprites["shovelwateringcan"].nbr_of_click += 1
     if bg_sprites["shovelwateringcan"].nbr_of_click<= max_nbr_click_to_repeat:
         popup_content.append(indice4)
+        indicate_click = pygame.time.get_ticks()
     else:
         last_no_repeat = pygame.time.get_ticks()
     ##print("shovelwateringcan")
     grave_click_combo = 0
 
 def mouseSwingCollision():
-    global last_no_repeat, grave_click_combo
+    global last_no_repeat, grave_click_combo, indicate_click
     bg_sprites["swing"].nbr_of_click += 1
     if bg_sprites["swing"].nbr_of_click<= max_nbr_click_to_repeat:
         popup_content.append(discut_swing)
+        indicate_click = pygame.time.get_ticks()
     else:
         last_no_repeat = pygame.time.get_ticks()
     #print("swing")
     grave_click_combo = 0
 
 def mouseTreeCollision(): 
-    global last_no_repeat, grave_click_combo
+    global last_no_repeat, grave_click_combo, indicate_click
     bg_sprites["tree"].nbr_of_click += 1
     if bg_sprites["tree"].nbr_of_click<= max_nbr_click_to_repeat:
         popup_content.append(discut_tree)
+        indicate_click = pygame.time.get_ticks()
     else:
         last_no_repeat = pygame.time.get_ticks()
     #print("tree")
@@ -700,8 +707,13 @@ while running:
     else:
         pass
     #HERE GOES DRAWING CODE (ON TOP OF bgSprites BUT UNDER THE MOUSE AND BELZEE, UPDATE EACH FRAME)
-    if (last_no_repeat + 4000) > pygame.time.get_ticks() and last_no_repeat != 0:
-        GAME_FONT.render_to(screen, (900, 100), "Je ne vais pas me répéter !", (251, 242, 252))
+    if (last_no_repeat + 3000) > pygame.time.get_ticks() and last_no_repeat != 0:
+        GAME_FONT.render_to(screen, (900, 100), "Je ne vais pas", (251, 242, 252))
+        GAME_FONT.render_to(screen, (900, 145), "me répéter !", (251, 242, 252))
+    else:
+        pass
+    if (indicate_click + 700) > pygame.time.get_ticks() and indicate_click != 0:
+        GAME_FONT.render_to(screen, (900, 100), "!", (251, 242, 252))
     else:
         pass
     #THEN DRAW MOUSE AND BELZEE ON TOP OF EVERYTHING
