@@ -5,7 +5,7 @@
 
 ## Installation
 - install Python
-- install Pygame
+- install Pygame  
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the pygame library.
 ```bash
 pip install pygame
