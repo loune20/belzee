@@ -18,6 +18,3 @@ Clone this repository onto your computer and lauch
 
 ## Usage
 The game is mostly point-and-click
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/) License
